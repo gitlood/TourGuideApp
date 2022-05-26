@@ -7,8 +7,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_whanganui">Whanganui</string>
     <string name="menu_monuments">Monuments</string>
     <string name="menu_museum">Museums</string>
     <string name="menu_parks">Parks</string>
+
+    <string name="image_description">Image for place.</string>
 </resources>

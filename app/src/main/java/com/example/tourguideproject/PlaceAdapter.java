@@ -1,6 +1,10 @@
 package com.example.tourguideproject;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.graphics.RectF;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +17,13 @@ import java.util.ArrayList;
 public class PlaceAdapter extends ArrayAdapter<Place> {
 
     /**
-     * Resource ID for the background color for this list of words
-     */
-    private int mColorResourceId;
-
-    /**
      * Create a new {@link PlaceAdapter} object.
      *
      * @param context         is the current context (i.e. Activity) that the adapter is being created in.
      * @param places          is the list of {@link Place}s to be displayed.
-     * @param colorResourceId is the resource ID for the background color for this list of words
      */
-    public PlaceAdapter(Context context, ArrayList<Place> places, int colorResourceId) {
+    public PlaceAdapter(Context context, ArrayList<Place> places) {
         super(context, 0, places);
-        mColorResourceId = colorResourceId;
     }
 
     @Override
@@ -64,7 +61,9 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // Check if an image is provided for this place or not
         if (currentPlace.hasImage()) {
             // If an image is available, display the provided image based on the resource ID
-            imageView.setImageResource(currentPlace.getmImageResourceId());
+//convert jpg to bitmap
+            imageView.setImageBitmap(scaleBitmapAndKeepRation(BitmapFactory.decodeResource(getContext().getResources(),currentPlace.getmImageResourceId())
+                    , 800, 800));
             // Make sure the view is visible
             imageView.setVisibility(View.VISIBLE);
         } else {
@@ -73,5 +72,13 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         }
 
         return listItemView;
+    }
+
+    public static Bitmap scaleBitmapAndKeepRation(Bitmap targetBmp,int reqHeightInPixels,int reqWidthInPixels)
+    {
+        Matrix matrix = new Matrix();
+        matrix .setRectToRect(new RectF(0, 0, targetBmp.getWidth(), targetBmp.getHeight()), new RectF(0, 0, reqWidthInPixels, reqHeightInPixels), Matrix.ScaleToFit.CENTER);
+        Bitmap scaledBitmap = Bitmap.createBitmap(targetBmp, 0, 0, targetBmp.getWidth(), targetBmp.getHeight(), matrix, true);
+        return scaledBitmap;
     }
 }
