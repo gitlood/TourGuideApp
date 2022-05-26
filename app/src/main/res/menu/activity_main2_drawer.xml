@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_monuments"
+            android:icon="@drawable/baseline_nature_24"
+            android:title="@string/menu_monuments" />
+        <item
+            android:id="@+id/nav_museum"
+            android:icon="@drawable/baseline_museum_20"
+            android:title="@string/menu_museum" />
+        <item
+            android:id="@+id/nav_parks"
+            android:icon="@drawable/baseline_park_20"
+            android:title="@string/menu_parks" />
+    </group>
+</menu>
