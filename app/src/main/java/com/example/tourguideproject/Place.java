@@ -22,6 +22,10 @@ public class Place {
      * int resource for images of the place
      */
     private int mImageResourceId = NO_IMAGE_PROVIDED;
+    /**
+     * String resource for photo description place
+     */
+    private String photoDescription;
 
     /**
      * Create a new Word object.
@@ -44,11 +48,12 @@ public class Place {
      * @param contactInformation string for contact information
      * @param mImageResourceId   is the resource ID for the image file associated with the place
      */
-    public Place(String name, String description, String contactInformation, int mImageResourceId) {
+    public Place(String name, String description, String contactInformation, int mImageResourceId, String photoDescription) {
         this.name = name;
         this.description = description;
         this.contactInformation = contactInformation;
         this.mImageResourceId = mImageResourceId;
+        this.photoDescription = photoDescription;
     }
 
     public String getName() {
@@ -81,6 +86,14 @@ public class Place {
 
     public void setmImageResourceId(int mImageResourceId) {
         this.mImageResourceId = mImageResourceId;
+    }
+
+    public String getPhotoDescription() {
+        return photoDescription;
+    }
+
+    public void setPhotoDescription(String photoDescription) {
+        this.photoDescription = photoDescription;
     }
 
     /**

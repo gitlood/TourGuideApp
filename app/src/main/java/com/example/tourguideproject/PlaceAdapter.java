@@ -58,17 +58,22 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
 
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = listItemView.findViewById(R.id.image);
+        TextView photoDescription = listItemView.findViewById(R.id.photodescription);
         // Check if an image is provided for this place or not
         if (currentPlace.hasImage()) {
             // If an image is available, display the provided image based on the resource ID
-//convert jpg to bitmap
+//convert jpg to bitmap - need to work out how to be dynamic in figuring out pixels
             imageView.setImageBitmap(scaleBitmapAndKeepRation(BitmapFactory.decodeResource(getContext().getResources(),currentPlace.getmImageResourceId())
-                    , 800, 800));
+                    , 700, 2000));
+            photoDescription.setText(currentPlace.getPhotoDescription());
             // Make sure the view is visible
             imageView.setVisibility(View.VISIBLE);
+            photoDescription.setVisibility(View.VISIBLE);
+
         } else {
             // Otherwise hide the ImageView (set visibility to GONE)
             imageView.setVisibility(View.GONE);
+            photoDescription.setVisibility(View.GONE);
         }
 
         return listItemView;
@@ -78,7 +83,6 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
     {
         Matrix matrix = new Matrix();
         matrix .setRectToRect(new RectF(0, 0, targetBmp.getWidth(), targetBmp.getHeight()), new RectF(0, 0, reqWidthInPixels, reqHeightInPixels), Matrix.ScaleToFit.CENTER);
-        Bitmap scaledBitmap = Bitmap.createBitmap(targetBmp, 0, 0, targetBmp.getWidth(), targetBmp.getHeight(), matrix, true);
-        return scaledBitmap;
+        return Bitmap.createBitmap(targetBmp, 0, 0, targetBmp.getWidth(), targetBmp.getHeight(), matrix, true);
     }
 }

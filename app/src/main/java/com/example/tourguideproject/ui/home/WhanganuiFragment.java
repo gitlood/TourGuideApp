@@ -38,7 +38,7 @@ public class WhanganuiFragment extends Fragment {
         return root;
     }
 
-    public void loadContent(View rootView){
+    public void loadContent(View rootView) {
         // Create a list of places
         final ArrayList<Place> places = new ArrayList<>();
         places.add(new Place("Whanganui(Wanganui)", "Whanganui (/ˈhwɒŋənuːi/;[3] Māori: [ˀwaŋanui]), also spelled Wanganui,[4] is a city in the Manawatū-Whanganui region of New Zealand. The city is located on the west coast of the North Island at the mouth of the Whanganui River, New Zealand's longest navigable waterway. Whanganui is the 19th most-populous urban area in New Zealand and the second-most-populous in Manawatū-Whanganui, with a population of 42,300 as of June 2021.[2]\n" +
@@ -49,7 +49,8 @@ public class WhanganuiFragment extends Fragment {
                 "\n" +
                 "On 17 November 2015, Land Information New Zealand (LINZ) announced that Wanganui District would be renamed Whanganui District.[6] This changed the official name of the District Council, and, because Whanganui is not a city but a district, it changed the official name of the urban area as well.",
                 "http://www.whanganui.govt.nz/",
-                R.raw.whanganui));
+                R.raw.whanganui,
+                "From atop the Durie Hill War Memorial Tower, a view early morning of the Whanganui River, to the northwest, and Dublin Street Bridge. City Bridge is just to the left and out of shot, the CBD and Memorial gardens just over the river, Whanganui, NZ."));
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
@@ -58,7 +59,7 @@ public class WhanganuiFragment extends Fragment {
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
         // word_list.xml layout file.
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
+        ListView listView = rootView.findViewById(R.id.list);
 
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
