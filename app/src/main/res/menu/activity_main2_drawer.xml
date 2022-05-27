@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_whanganui"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/baseline_water_20"
             android:title="@string/menu_whanganui" />
         <item
             android:id="@+id/nav_monuments"

@@ -19,11 +19,17 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
     /**
      * Create a new {@link PlaceAdapter} object.
      *
-     * @param context         is the current context (i.e. Activity) that the adapter is being created in.
-     * @param places          is the list of {@link Place}s to be displayed.
+     * @param context is the current context (i.e. Activity) that the adapter is being created in.
+     * @param places  is the list of {@link Place}s to be displayed.
      */
     public PlaceAdapter(Context context, ArrayList<Place> places) {
         super(context, 0, places);
+    }
+
+    public static Bitmap scaleBitmapAndKeepRation(Bitmap targetBmp, int reqHeightInPixels, int reqWidthInPixels) {
+        Matrix matrix = new Matrix();
+        matrix.setRectToRect(new RectF(0, 0, targetBmp.getWidth(), targetBmp.getHeight()), new RectF(0, 0, reqWidthInPixels, reqHeightInPixels), Matrix.ScaleToFit.CENTER);
+        return Bitmap.createBitmap(targetBmp, 0, 0, targetBmp.getWidth(), targetBmp.getHeight(), matrix, true);
     }
 
     @Override
@@ -35,7 +41,7 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
                     R.layout.list_item, parent, false);
         }
 
-// Get the {@link Place} object located at this position in the list
+        // Get the {@link Place} object located at this position in the list
         Place currentPlace = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID name.
@@ -62,27 +68,18 @@ public class PlaceAdapter extends ArrayAdapter<Place> {
         // Check if an image is provided for this place or not
         if (currentPlace.hasImage()) {
             // If an image is available, display the provided image based on the resource ID
-//convert jpg to bitmap - need to work out how to be dynamic in figuring out pixels
-            imageView.setImageBitmap(scaleBitmapAndKeepRation(BitmapFactory.decodeResource(getContext().getResources(),currentPlace.getmImageResourceId())
+            //convert jpg to bitmap - need to work out how to be dynamic in figuring out pixels
+            imageView.setImageBitmap(scaleBitmapAndKeepRation(BitmapFactory.decodeResource(getContext().getResources(), currentPlace.getmImageResourceId())
                     , 700, 2000));
             photoDescription.setText(currentPlace.getPhotoDescription());
             // Make sure the view is visible
             imageView.setVisibility(View.VISIBLE);
             photoDescription.setVisibility(View.VISIBLE);
-
         } else {
             // Otherwise hide the ImageView (set visibility to GONE)
             imageView.setVisibility(View.GONE);
             photoDescription.setVisibility(View.GONE);
         }
-
         return listItemView;
-    }
-
-    public static Bitmap scaleBitmapAndKeepRation(Bitmap targetBmp,int reqHeightInPixels,int reqWidthInPixels)
-    {
-        Matrix matrix = new Matrix();
-        matrix .setRectToRect(new RectF(0, 0, targetBmp.getWidth(), targetBmp.getHeight()), new RectF(0, 0, reqWidthInPixels, reqHeightInPixels), Matrix.ScaleToFit.CENTER);
-        return Bitmap.createBitmap(targetBmp, 0, 0, targetBmp.getWidth(), targetBmp.getHeight(), matrix, true);
     }
 }
