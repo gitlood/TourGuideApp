@@ -22,23 +22,24 @@ Navigating between those lists using intents and multiple Activities or a ViewPa
 Creating your own custom classes.
 Properly handling images or audio (if applicable).
 Note: As the focus of this program is Java, only projects completed with Java as the source code will be accepted. Projects using Kotlin as the source code will not be accepted.
-<table>
+<table border="0">
 <tr>
 <td>
-![Main Screen](app/src/main/res/readmescreenshots/1.jpg)  
-Main Screen
+Main Screen<br>
+<img src =app/src/main/res/readmescreenshots/1.jpg>
 </td>
 <td>
-![Menu](app/src/main/res/readmescreenshots/2.jpg)
-Menu
+Menu<br>
+<img src=app/src/main/res/readmescreenshots/2.jpg>
 </td>
 </tr>
 <tr>
 <td>
+Monuments<br>
 <img src=app/src/main/res/readmescreenshots/3.jpg>
 Monuments
 </td>
 <td>
-![Museums](app/src/main/res/readmescreenshots/4.jpg)
-Museums
+Museums<br>
+<img src=app/src/main/res/readmescreenshots/4.jpg>
 </td></tr></table>
