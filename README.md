@@ -35,5 +35,5 @@ Monuments
 ![Museums](![](app/src/main/res/readmescreenshots/4.jpg))
 Museums
 
-![Parks](![](app/src/main/res/readmescreenshots/5.jpg))
+![Parks](app/src/main/res/readmescreenshots/5.jpg)
 Parks
