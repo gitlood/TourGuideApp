@@ -37,7 +37,6 @@ Menu<br>
 <td>
 Monuments<br>
 <img src=app/src/main/res/readmescreenshots/3.jpg>
-Monuments
 </td>
 <td>
 Museums<br>
