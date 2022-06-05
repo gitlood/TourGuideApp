@@ -35,7 +35,7 @@ Menu
 </tr>
 <tr>
 <td>
-<img src=app/src/main/res/readmescreenshots/3.jpg)
+<img src=app/src/main/res/readmescreenshots/3.jpg>
 Monuments
 </td>
 <td>
