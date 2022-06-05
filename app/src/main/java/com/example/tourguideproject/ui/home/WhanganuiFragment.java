@@ -39,7 +39,6 @@ public class WhanganuiFragment extends Fragment {
     }
 
     public void loadContent(View rootView) {
-        // Create a list of places
         final ArrayList<Place> places = new ArrayList<>();
         places.add(new Place("Whanganui(Wanganui)", "Whanganui (/ˈhwɒŋənuːi/;[3] Māori: [ˀwaŋanui]), also spelled Wanganui,[4] is a city in the Manawatū-Whanganui region of New Zealand. The city is located on the west coast of the North Island at the mouth of the Whanganui River, New Zealand's longest navigable waterway. Whanganui is the 19th most-populous urban area in New Zealand and the second-most-populous in Manawatū-Whanganui, with a population of 42,300 as of June 2021.\n" +
                 "\n" +

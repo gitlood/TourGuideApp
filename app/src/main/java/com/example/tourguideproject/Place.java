@@ -28,7 +28,7 @@ public class Place {
     private String photoDescription;
 
     /**
-     * Create a new Word object.
+     * Create a new Place object without image.
      *
      * @param name               is the name of the place
      * @param description        is a paragraph descriping the place
@@ -41,7 +41,7 @@ public class Place {
     }
 
     /**
-     * Create a new Word object.
+     * Create a new Place object with image.
      *
      * @param name               is the name of the place
      * @param description        is a paragraph descriping the place

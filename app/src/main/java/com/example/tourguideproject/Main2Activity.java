@@ -1,9 +1,9 @@
 package com.example.tourguideproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -27,8 +27,16 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain2.toolbar);
-        binding.appBarMain2.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
+        binding.appBarMain2.fab.setOnClickListener(view -> {
+            Intent Email = new Intent(Intent.ACTION_SEND);
+            Email.setType("text/email");
+            Email.putExtra(Intent.EXTRA_EMAIL,
+                    new String[]{"unilood@gmail.com"});
+            Email.putExtra(Intent.EXTRA_SUBJECT,
+                    "Tour Project Manager"); // Email 's Subject
+            Email.putExtra(Intent.EXTRA_TEXT, "Progressive Zen," + "");
+            startActivity(Intent.createChooser(Email, "Send Feedback:"));
+        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
