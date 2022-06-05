@@ -23,16 +23,16 @@ Creating your own custom classes.
 Properly handling images or audio (if applicable).
 Note: As the focus of this program is Java, only projects completed with Java as the source code will be accepted. Projects using Kotlin as the source code will not be accepted.
 
-![Main Screen](![](app/src/main/res/readmescreenshots/1.jpg))
+![Main Screen](app/src/main/res/readmescreenshots/1.jpg)
 Main Screen
 
-![Menu](![](app/src/main/res/readmescreenshots/2.jpg))
+![Menu](app/src/main/res/readmescreenshots/2.jpg)
 Menu
 
-![Monuments](![](app/src/main/res/readmescreenshots/3.jpg))
+![Monuments](app/src/main/res/readmescreenshots/3.jpg)
 Monuments
 
-![Museums](![](app/src/main/res/readmescreenshots/4.jpg))
+![Museums](app/src/main/res/readmescreenshots/4.jpg)
 Museums
 
 ![Parks](app/src/main/res/readmescreenshots/5.jpg)
